@@ -7,15 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Author : Kemal DURU
+
 
 namespace Calculator
 {
     public partial class Form1 : Form
-    {
+    {   
+        //Variables
         bool checkopt = false;
         bool checknumber = false;
         bool checkreset = false;
-        Double temp = 0;
         Double result = 0;
         string opt = "";
 
@@ -24,9 +26,9 @@ namespace Calculator
         {
             InitializeComponent();
         }
-
+        //Numbers Button
         private void Numbers_event(object sender, EventArgs e)
-        {q
+        {
             Button btn = (Button)sender;
             if (txtResult.Text == "0" || checkopt )
             {
@@ -45,10 +47,10 @@ namespace Calculator
 
 
         }
-
+        //Operator Button
         private void optEvent(object sender, EventArgs e)
         {
-
+            
             checkopt = true;
             Button btn = (Button)sender;
             string newopt = btn.Text;
@@ -80,10 +82,11 @@ namespace Calculator
             lblResult.Text = result.ToString() + " " + opt;
 
         }
-
+        //Equal Button
         private void equal_event(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            
             if (checknumber)
             {
                 switch (opt)
@@ -103,7 +106,9 @@ namespace Calculator
                     case "%":
                         txtResult.Text = ((result * Double.Parse(txtResult.Text)) / 100).ToString();
                         break;
+                    
                 }
+                checkreset = true;
                 checknumber = false;
                 opt = "";
             }
@@ -122,30 +127,53 @@ namespace Calculator
             {
                 result = Double.Parse(txtResult.Text);
                 lblResult.Text = "=" + result.ToString();
-                checkreset = true;
+                
             }
         }
-
+        //Clear All button (C)
         private void clear_event(object sender, EventArgs e)
         {
             txtResult.Clear();
             result = 0;
             lblResult.Text = "";
+            txtResult.Text = "0";
             checkopt = false;
             opt = "";
             checknumber = false;
             checkreset = false;
         }
-
+        //Clear operator button (CE)
         private void clear_result_event(object sender, EventArgs e)
         {
             lblResult.Text = result.ToString();
-            temp = Double.Parse(txtResult.Text);
-            if (txtResult.Text != "")
-            {
-                checkreset = true;
-            }
             txtResult.Clear();
+            txtResult.Text = "0";
+            checkreset = true;
+            
+            
+        }
+        // Square and Root Buttons
+        private void optsqrt(object sender, EventArgs e)
+        {
+            
+            Button btn = (Button)sender;
+            opt = btn.Text;
+            if (checknumber)
+            {
+                switch (opt)
+                {
+                    case "X2":
+                        txtResult.Text = (Double.Parse(txtResult.Text) * Double.Parse(txtResult.Text)).ToString();
+                        break;
+                    case "½X":
+                        txtResult.Text = (Math.Sqrt(Double.Parse(txtResult.Text))).ToString();
+                        break;
+                }
+                
+            }
+
+            result = Double.Parse(txtResult.Text);
+            lblResult.Text = result.ToString();
         }
     }
 }

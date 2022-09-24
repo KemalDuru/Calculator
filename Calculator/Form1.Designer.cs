@@ -83,7 +83,7 @@ namespace Calculator
             this.lblResult.AutoSize = true;
             this.lblResult.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblResult.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblResult.Location = new System.Drawing.Point(209, 64);
+            this.lblResult.Location = new System.Drawing.Point(22, 63);
             this.lblResult.Name = "lblResult";
             this.lblResult.Padding = new System.Windows.Forms.Padding(3);
             this.lblResult.Size = new System.Drawing.Size(16, 21);
@@ -240,7 +240,7 @@ namespace Calculator
             this.btnSqrt.TabIndex = 2;
             this.btnSqrt.Text = "½X";
             this.btnSqrt.UseVisualStyleBackColor = true;
-            this.btnSqrt.Click += new System.EventHandler(this.optEvent);
+            this.btnSqrt.Click += new System.EventHandler(this.optsqrt);
             // 
             // btnTimes
             // 
@@ -262,7 +262,7 @@ namespace Calculator
             this.btnPow.TabIndex = 2;
             this.btnPow.Text = "X2";
             this.btnPow.UseVisualStyleBackColor = true;
-            this.btnPow.Click += new System.EventHandler(this.optEvent);
+            this.btnPow.Click += new System.EventHandler(this.optsqrt);
             // 
             // btnDivide
             // 
