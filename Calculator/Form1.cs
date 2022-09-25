@@ -175,5 +175,65 @@ namespace Calculator
             result = Double.Parse(txtResult.Text);
             lblResult.Text = result.ToString();
         }
+        // KEY ShortCuts
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyData)
+            {
+                case Keys.NumPad0: 
+                    btnZero.PerformClick();
+                    break;
+                case Keys.NumPad1:
+                    btnOne.PerformClick();
+                    break;
+                case Keys.NumPad2:
+                    btn_2.PerformClick();
+                    break;
+                case Keys.NumPad3:
+                    btn_3.PerformClick();
+                    break;
+                case Keys.NumPad4:
+                    btn_4.PerformClick();
+                    break;
+                case Keys.NumPad5:
+                    btn_5.PerformClick();
+                    break;
+                case Keys.NumPad6:
+                    btn_6.PerformClick();
+                    break;
+                case Keys.NumPad7:
+                    btn_7.PerformClick();
+                    break;
+                case Keys.NumPad8:
+                    btn_8.PerformClick();
+                    break;
+                case Keys.NumPad9:
+                    btn_9.PerformClick();
+                    break;
+                case Keys.Add:
+                    btnPlus.PerformClick();
+                    break;
+                case Keys.Subtract:
+                    btnMinus.PerformClick();
+                    break;
+                case Keys.Divide:
+                    btnDivide.PerformClick();
+                    break;
+                case Keys.Multiply:
+                    btnTimes.PerformClick();
+                    break;
+                case Keys.Escape:
+                    Close();
+                    break;                   
+                case Keys.Enter:
+                    btnEqual.PerformClick();
+                    break;
+
+
+
+
+            }
+        }
+
     }
 }
