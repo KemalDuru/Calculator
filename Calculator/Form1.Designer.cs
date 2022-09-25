@@ -413,7 +413,7 @@ namespace Calculator
             this.Enabled = false;
             this.MaximumSize = new System.Drawing.Size(295, 487);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
